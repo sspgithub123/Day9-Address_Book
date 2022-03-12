@@ -3,6 +3,7 @@ package com.bridgelabz;
 import java.util.Scanner;
 
 public class AddressBook {
+
     //Scanner object for User Input
     Scanner sc = new Scanner(System.in);
 
@@ -32,15 +33,19 @@ public class AddressBook {
 
     //Method to Show the Contact Details
     public void displayContact() {
-        System.out.println("Contact Details -");
-        System.out.println("First Name : " + contacts.getFirstName());
-        System.out.println("Last Name : " + contacts.getLastname());
-        System.out.println("Address : " + contacts.getAddress());
-        System.out.println("City : " + contacts.getCity());
-        System.out.println("State : " + contacts.getState());
-        System.out.println("Zip Code : " + contacts.getZip());
-        System.out.println("Phone Number : " + contacts.getPhoneNo());
-        System.out.println("EMail ID : " + contacts.getEmailID());
+        if(contacts.getFirstName()==null) {
+            System.out.println("Contact Details Not Available");
+        } else {
+            System.out.println("Contact Details -");
+            System.out.println("First Name : "+contacts.getFirstName());
+            System.out.println("Last Name : "+contacts.getLastname());
+            System.out.println("Address : "+contacts.getAddress());
+            System.out.println("City : "+contacts.getCity());
+            System.out.println("State : "+contacts.getState());
+            System.out.println("Zip Code : "+contacts.getZip());
+            System.out.println("Phone Number : "+contacts.getPhoneNo());
+            System.out.println("EMail ID : "+contacts.getEmailID());
+        }
     }
 
     //Method to Edit the Existing Contact
@@ -50,9 +55,10 @@ public class AddressBook {
         String firstName = sc.next();
 
         //check if the Given User with First Name
-        if (!firstName.equalsIgnoreCase(contacts.getFirstName())) {
+        if(!firstName.equalsIgnoreCase(contacts.getFirstName())) {
             System.out.println("The Entered Contact Name is Not Available in Address Book");
-        } else {
+        }
+        else {
             System.out.println("Enter the Last Name :");
             contacts.setLastname(sc.next());
             System.out.println("Enter the Address :");
@@ -69,5 +75,28 @@ public class AddressBook {
             contacts.setEmailID(sc.next());
         }
     }
+
+    //Method to Delete the Existing Contact
+    public void deleteContact() {
+        //Get First Name to Edit the Contact
+        System.out.println("Enter the First Name : ");
+        String firstName = sc.next();
+
+        //check if the Given User with First Name
+        if(!firstName.equalsIgnoreCase(contacts.getFirstName())) {
+            System.out.println("The Entered Contact Name is Not Available in Address Book");
+        }
+        else {
+            contacts.setFirstName(null);
+            contacts.setLastname(null);
+            contacts.setAddress(null);
+            contacts.setZip(null);
+            contacts.setState(null);
+            contacts.setCity(null);
+            contacts.setEmailID(null);
+            contacts.setPhoneNo(null);
+        }
+    }
 }
+
 
