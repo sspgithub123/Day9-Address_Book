@@ -1,17 +1,17 @@
 package com.bridgelabz;
-
 public class Contacts {
-    //Variable Declaration for Contacts Class
+
+    // initialization
     private String firstName;
-    private String lastname;
-    private String address;
+    private String lastName;
     private String city;
     private String state;
-    private String zip;
-    private String phoneNo;
-    private String emailID;
+    private int zip;
+    private String phNo;
+    private String email;
 
-    //Adding Getter and Setter Methods for the Variables
+    // generating getter and setter
+
     public String getFirstName() {
         return firstName;
     }
@@ -20,20 +20,12 @@ public class Contacts {
         this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getCity() {
@@ -52,29 +44,33 @@ public class Contacts {
         this.state = state;
     }
 
-    public String getZip() {
+    public int getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(int zip) {
         this.zip = zip;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    public String getPhNo() {
+        return phNo;
     }
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setPhNo(String phNo) {
+        this.phNo = phNo;
     }
 
-    public String getEmailID() {
-        return emailID;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailID(String emailID) {
-        this.emailID = emailID;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Contacts [firstName=" + firstName + ", lastName=" + lastName + ", city=" + city + ", state=" + state
+                + ", zip=" + zip + ", phNo=" + phNo + ", email=" + email + "]";
     }
 }
-
-
